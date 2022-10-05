@@ -1,3 +1,11 @@
+---
+layout: post
+title:  A pitfall generating the data from postgres TPC-H dbgen
+date: 2022-10-05 21:01:00
+description: I found the script in the `tpch_prepare`, which make the dbgen in parallel. I think it's caused by the PCIe 3.0's bandwidth slowed down some of the other dbgen when running in parallel. So I run them sequencially resolve the problem.
+tags: pitfalls
+categories: tpch
+---
 # A pitfall generating the data from postgres TPC-H dbgen
 I found the script in the `tpch_prepare`, which make the dbgen in parallel. I think it's caused by the PCIe 3.0's bandwidth slowed down some of the other dbgen when running in parallel. So I run them sequencially resolve the problem.
 ```bash
